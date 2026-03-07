@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coach - Nishu Yoga</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+/* ===== BODY DARK ANIMATED BACKGROUND ===== */
+body{
+  background: linear-gradient(-45deg, #1b1b1b, #2c003e, #000000, #3b0066);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color:#fff;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:#111;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:700;
+  color:#b983ff;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#fff;
+  font-weight:500;
+}
+
+.nav-links a:hover{
+  color:#b983ff;
+}
+
+.enroll-btn{
+  background:#8e44ad;
+  padding:8px 15px;
+  border-radius:20px;
+  color:white !important;
+}
+
+/* ===== HERO SECTION ===== */
+.coach-hero{
+  height:75vh;
+  background:
+  linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  url("papacochpic2.webp") no-repeat center center/cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.coach-hero h1{
+  font-size:45px;
+  margin-bottom:15px;
+}
+
+.coach-hero p{
+  max-width:800px;
+  font-size:18px;
+  color:#ddd;
+}
+
+/* ===== CONTENT GLASS CARD ===== */
+.coach-content{
+  max-width:900px;
+  margin:60px auto;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.6);
+  text-align:center;
+}
+
+.coach-content img{
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:20px;
+  border:5px solid #b983ff;
+}
+
+.coach-content h2{
+  margin-bottom:15px;
+  color:#b983ff;
+}
+
+.coach-content p{
+  line-height:1.7;
+  margin-bottom:20px;
+  color:#ddd;
+}
+
+/* ===== BUTTON ===== */
+.coach-btn{
+  display:inline-block;
+  padding:10px 25px;
+  background:linear-gradient(90deg,#8e44ad,#b983ff);
+  color:white;
+  text-decoration:none;
+  border-radius:25px;
+  transition:0.3s;
+}
+
+.coach-btn:hover{
+  transform:translateY(-3px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .coach-hero h1{
+    font-size:28px;
+  }
+
+  .nav-links{
+    gap:10px;
+    font-size:14px;
+  }
+
+  .coach-content{
+    margin:40px 20px;
+    padding:25px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">Nishu Yoga</div>
+  <ul class="nav-links">
+    <li><a href="nishaproject.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="coach.html">Coach</a></li>
+    <li><a href="join classes.html">Classes</a></li>
+    <li><a href="enroll.html" class="enroll-btn">Enroll</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="coach-hero">
+  <div>
+    <h1>Coach & Inspiration</h1>
+    <p>
+      Discipline, dedication and guidance for a strong body and peaceful mind.
+    </p>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<section class="coach-content">
+  <img src="papacoach.jpg" alt="Coach Image">
+
+  <h2>About Coach</h2>
+
+  <p>
+    He inspires countless students with discipline and focus.
+    His teachings help in achieving physical strength, flexibility and inner peace.
+  </p>
+
+  <a href="nishaproject.html" class="coach-btn">Back to Home</a>
+</section>
+
+</body>
+</html>
+

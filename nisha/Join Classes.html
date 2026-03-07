@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yoga Classes - Nishu Yoga</title>
+
+<style>
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #111, #222);
+    color: #fff;
+    margin: 0;
+  }
+
+  header.classes-hero {
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('yogapose2.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  header.classes-hero h1 {
+    font-size: 50px;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #8e44ad, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+  }
+
+  header.classes-hero p {
+    font-size: 22px;
+    max-width: 800px;
+  }
+
+  .classes-content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #111;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+    text-align: center;
+  }
+
+  .classes-content h2 {
+    color: #8e44ad;
+    margin-bottom: 25px;
+  }
+
+  .class-card {
+    background: #222;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    transition: 0.3s ease;
+  }
+
+  .class-card:hover {
+    transform: translateY(-5px);
+    background: #8e44ad;
+  }
+
+  /* FORM DESIGN */
+  .register-form {
+    margin-top: 40px;
+  }
+
+  .register-form input,
+  .register-form select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #8e44ad;
+    background: #222;
+    color: #fff;
+  }
+
+  .register-form button {
+    padding: 12px 30px;
+    background: #8e44ad;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+  }
+
+  .register-form button:hover {
+    background: #a64ac9;
+    transform: scale(1.05);
+  }
+
+</style>
+</head>
+<body>
+  <nav class="navbar">
+  <div class="logo">Nishu Yoga</div>
+
+  <ul class="nav-links">
+    <li><a href="nishaproject.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="coach.html">Coach</a></li>
+    <li><a href="join classes.html">Classes</a></li>
+    <li><a href="enroll.html" class="enroll-btn">Enroll</a></li>
+  </ul>
+</nav>
+
+<header class="classes-hero">
+  <h1>Join Our Yoga Classes</h1>
+  <p>Discover strength, flexibility, and positivity with Nishu Yoga.</p>
+</header>
+
+<section class="classes-content">
+  <h2>Our Yoga Programs</h2>
+
+  <div class="class-card">
+    <h3>Beginner Yoga</h3>
+    <p>Perfect for newcomers starting their wellness journey.</p>
+  </div>
+
+  <div class="class-card">
+    <h3>Advanced Yoga</h3>
+    <p>Improve balance, flexibility and master advanced asanas.</p>
+  </div>
+
+  <div class="class-card">
+    <h3>Meditation & Mindfulness</h3>
+    <p>Develop clarity and calmness with guided meditation.</p>
+  </div>
+
+  <div class="class-card">
+    <h3>Personal Training</h3>
+    <p>Customized one-on-one yoga sessions tailored to you.</p>
+  </div>
+
+
+
+<!-- WHATSAPP SCRIPT -->
+<script>
+function sendToWhatsApp() {
+
+    var name = document.querySelector('input[name="Full Name"]').value;
+    var email = document.querySelector('input[name="Email"]').value;
+    var phone = document.querySelector('input[name="Phone"]').value;
+    var program = document.querySelector('select[name="Program"]').value;
+
+    var message = "New Yoga Class Registration:%0A%0A"
+        + "Name: " + name + "%0A"
+        + "Email: " + email + "%0A"
+        + "Phone: " + phone + "%0A"
+        + "Program: " + program;
+
+    var whatsappURL = "https://wa.me/919350601814?text=" + message;
+
+    window.open(whatsappURL, '_blank');
+}
+</script>
+
+</body>
+</html>
