@@ -7,10 +7,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
-/* -------- MongoDB Connection -------- */
 
-mongoose.connect("mongodb://127.0.0.1:27017/yogaDB")
-.then(() => console.log("MongoDB Connected"))
+/* -------- MongoDB Atlas Connection -------- */
+
+mongoose.connect("mongodb+srv://nisha:ekisha777@cluster0.uklak6o.mongodb.net/?appName=Cluster0")
+.then(() => console.log("MongoDB Atlas Connected"))
 .catch(err => console.log(err));
 
 /* -------- Schema -------- */
