@@ -4,63 +4,53 @@ const cors = require("cors");
 
 const app = express();
 
+/* -------- Middleware -------- */
 app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
 
 /* -------- MongoDB Atlas Connection -------- */
-
-mongoose.connect("mongodb+srv://nisha:ekisha777@cluster0.uklak6o.mongodb.net/?appName=Cluster0")
+// Make sure you have added your Atlas URI as Render Environment Variable named DATABASE_URL
+mongoose.connect(process.env.DATABASE_URL || "mongodb+srv://nisha:ekisha777@cluster0.uklak6o.mongodb.net/?appName=Cluster0", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 .then(() => console.log("MongoDB Atlas Connected"))
-.catch(err => console.log(err));
+.catch(err => console.log("MongoDB Connection Error:", err));
 
 /* -------- Schema -------- */
-
 const userSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  phone: String,
-  program: String
+    name: String,
+    email: String,
+    phone: String,
+    program: String
 });
 
 const User = mongoose.model("User", userSchema);
 
-/* -------- Home Route -------- */
-
+/* -------- Routes -------- */
 app.get("/", (req, res) => {
-  res.send("Server Working ✅");
+    res.send("Server Working ✅");
 });
-
-/* -------- Register (Enroll Form) -------- */
 
 app.post("/register", async (req, res) => {
+    try {
+        const { name, email, phone, program } = req.body;
 
-  try {
+        const newUser = new User({ name, email, phone, program });
+        await newUser.save();
 
-    const { name, email, phone, program } = req.body;
-
-    const newUser = new User({
-      name,
-      email,
-      phone,
-      program
-    });
-
-    await newUser.save();
-
-    res.send("Enrollment Successful 🎉");
-
-  } catch (error) {
-
-    console.log(error);
-    res.status(500).send("Server Error");
-
-  }
-
+        res.status(200).send("Enrollment Successful 🎉");
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Server Error");
+    }
 });
 
-/* -------- Server Start -------- */
-
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+/* -------- Start Server -------- */
+// Use the port provided by Render or default 5000 locally
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
+
