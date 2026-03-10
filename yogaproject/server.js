@@ -11,7 +11,7 @@ app.use(express.static(__dirname));
 
 /* -------- MongoDB Atlas Connection -------- */
 // Make sure you have added your Atlas URI as Render Environment Variable named DATABASE_URL
-mongoose.connect(process.env.DATABASE_URL || "mongodb+srv://nisha:ekisha777@cluster0.uklak6o.mongodb.net/?appName=Cluster0", {
+mongoose.connect(process.env.DATABASE_URL || "mongodb+srv://nisha:ekisha777@cluster0.uklak6o.mongodb.net/yogaDB?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -54,5 +54,6 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
 });
+
 
 
