@@ -85,13 +85,13 @@ button:hover {
 
 <form id="enrollForm">
 
-<input type="text" id="name" name="Full Name" placeholder="Full Name" required>
+<input type="text" id="name" placeholder="Full Name" required>
 
-<input type="email" id="email" name="Email" placeholder="Email Address" required>
+<input type="email" id="email" placeholder="Email Address" required>
 
-<input type="tel" id="phone" name="Phone" placeholder="Mobile Number" pattern="[0-9]{10}" maxlength="10" required>
+<input type="tel" id="phone" placeholder="Mobile Number" pattern="[0-9]{10}" maxlength="10" required>
 
-<select id="program" name="Program" required>
+<select id="program" required>
 <option value="">Select Program</option>
 <option>Beginner Yoga</option>
 <option>Advance Yoga</option>
@@ -107,40 +107,53 @@ button:hover {
 </div>
 
 <script>
+
 document.getElementById("enrollForm").addEventListener("submit", async function(e){
-    e.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const program = document.getElementById("program").value;
+e.preventDefault();
 
-    try{
-        const response = await fetch("https://yogaproject-uzah.onrender.com/register",{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify({
-                name:name,
-                email:email,
-                phone:phone,
-                program:program
-            })
-        });
+const name = document.getElementById("name").value;
+const email = document.getElementById("email").value;
+const phone = document.getElementById("phone").value;
+const program = document.getElementById("program").value;
 
-        if(response.ok){
-            alert("Enrollment Successful 🎉");
-            document.getElementById("enrollForm").reset();
-        } else {
-            alert("Server Error! Please try again.");
-        }
+console.log("Sending Data:", {name,email,phone,program});
 
-    }catch(error){
-        console.error(error);
-        alert("Server connection error");
-    }
+try{
+
+const response = await fetch("https://yogaproject-uzah.onrender.com/register",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+name,
+email,
+phone,
+program
+})
+
 });
+
+const data = await response.text();
+
+alert(data);
+
+document.getElementById("enrollForm").reset();
+
+}catch(error){
+
+console.error("Error:",error);
+
+alert("Server connection error");
+
+}
+
+});
+
 </script>
 
 </body>
