@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>About - Yoga Studio</title>
+<title>About - Nishu Yoga</title>
 
 <style>
 
 body{
 margin:0;
 font-family:Poppins, Arial, sans-serif;
-background:#f9f9f9;
+background:#0b0b0f;
+color:white;
 }
 
 /* NAVBAR */
@@ -17,114 +18,129 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 40px;
-background:#222;
+padding:18px 40px;
+background:#000;
 }
 
 .logo{
-color:white;
 font-size:22px;
 font-weight:bold;
+color:#9b6cff;
 }
 
 .nav-links{
 list-style:none;
 display:flex;
-gap:25px;
-margin:0;
-padding:0;
+gap:20px;
 }
 
-.nav-links a{
+.nav-links li a{
 text-decoration:none;
 color:white;
-font-size:16px;
+padding:8px 18px;
+border:1px solid #9b6cff;
+border-radius:10px;
+transition:0.3s;
+}
+
+.nav-links li a:hover{
+background:#9b6cff;
 }
 
 .enroll-btn{
-background:#6a9c89;
-padding:8px 15px;
-border-radius:5px;
+background:#9b6cff;
 }
 
 /* HEADER */
 
 .about-header{
-background:#6a9c89;
-color:white;
 text-align:center;
-padding:70px;
+padding:90px 20px;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url("images/yoga-bg.jpg");
+background-size:cover;
+background-position:center;
 }
 
 .about-header h1{
-margin:0;
-font-size:40px;
+font-size:45px;
+color:#9b6cff;
 }
 
 /* FOUNDER */
 
 .about-founder{
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 gap:40px;
-padding:60px;
-background:white;
+padding:70px;
 flex-wrap:wrap;
 }
 
 .about-img{
-width:200px;
-height:200px;
+width:220px;
+height:220px;
 border-radius:50%;
+border:4px solid #9b6cff;
 object-fit:cover;
 }
 
 .about-text{
 max-width:500px;
-line-height:1.6;
+line-height:1.7;
 }
 
 /* BENEFITS */
 
 .benefits{
 text-align:center;
-padding:60px;
-background:#f0f0f0;
+padding:70px;
+}
+
+.benefits h2{
+color:#9b6cff;
+margin-bottom:40px;
 }
 
 .benefit-box{
 display:flex;
 justify-content:center;
-gap:30px;
+gap:25px;
 flex-wrap:wrap;
 }
 
 .card{
-background:white;
+background:#111;
 padding:25px;
-border-radius:10px;
-width:200px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+width:220px;
+border-radius:12px;
+border:1px solid #9b6cff;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+background:#9b6cff;
 }
 
 /* QUOTE */
 
 .quote{
 text-align:center;
-padding:50px;
-background:white;
+padding:60px;
 font-style:italic;
-font-size:20px;
+font-size:22px;
+background:#111;
 }
 
 /* FOOTER */
 
 footer{
-background:#222;
-color:white;
+background:black;
 text-align:center;
-padding:20px;
+padding:25px;
+margin-top:40px;
 }
 
 </style>
@@ -137,7 +153,7 @@ padding:20px;
 
 <nav>
 
-<div class="logo">Yoga Studio</div>
+<div class="logo">Nishu Yoga</div>
 
 <ul class="nav-links">
 <li><a href="index.html">Home</a></li>
@@ -152,25 +168,29 @@ padding:20px;
 <!-- HEADER -->
 
 <section class="about-header">
-<h1>About Our Yoga Studio</h1>
-<p>Bringing peace, balance and health through yoga</p>
+
+<h1>About Nishu Yoga</h1>
+<p>Strength • Flexibility • Positivity</p>
+
 </section>
 
 <!-- FOUNDER -->
 
 <section class="about-founder">
 
-<img src="nishapic4.jpg" class="about-img">
+<img src="nisha4.jpg" class="about-img">
 
 <div class="about-text">
 
 <h2>Nisha Rani</h2>
 
 <p>
-Welcome to our Yoga Studio. I am passionate about helping people
-improve their physical and mental health through yoga and meditation.
-Our goal is to create a peaceful environment where everyone can
-practice yoga and live a healthy lifestyle.
+Welcome to Nishu Yoga. Our mission is to help people live
+a healthier and happier life through yoga, meditation and
+mindful breathing practices.
+
+Yoga is not just exercise — it is a journey toward balance,
+peace and positivity.
 </p>
 
 </div>
@@ -187,17 +207,17 @@ practice yoga and live a healthy lifestyle.
 
 <div class="card">
 <h3>Flexibility</h3>
-<p>Yoga improves body flexibility and strength.</p>
+<p>Improve body flexibility and posture.</p>
 </div>
 
 <div class="card">
 <h3>Stress Relief</h3>
-<p>Regular yoga practice helps reduce stress.</p>
+<p>Yoga helps calm the mind and reduce stress.</p>
 </div>
 
 <div class="card">
 <h3>Better Focus</h3>
-<p>Yoga improves concentration and mental peace.</p>
+<p>Enhances concentration and mental clarity.</p>
 </div>
 
 </div>
@@ -213,11 +233,12 @@ practice yoga and live a healthy lifestyle.
 <!-- FOOTER -->
 
 <footer>
-<p>© 2026 Yoga Studio | All Rights Reserved</p>
+<p>© 2026 Nishu Yoga | All Rights Reserved</p>
 </footer>
 
 </body>
 </html>
+
 
 
 
