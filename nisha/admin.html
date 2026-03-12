@@ -12,10 +12,31 @@ color:white;
 text-align:center;
 }
 
+h1{
+margin-top:30px;
+}
+
+input{
+padding:10px;
+border-radius:6px;
+border:none;
+margin-right:10px;
+}
+
+button{
+padding:10px 15px;
+background:#9b6cff;
+border:none;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
 table{
 margin:auto;
 border-collapse:collapse;
 width:80%;
+margin-top:30px;
 }
 
 th,td{
@@ -60,12 +81,12 @@ background:#9b6cff;
 
 function checkPass(){
 
-let pass=document.getElementById("pass").value;
+let pass = document.getElementById("pass").value;
 
-if(pass==="ekishu777"){
+if(pass === "ekishu777"){
 
-document.getElementById("login").style.display="none";
-document.getElementById("dataTable").style.display="table";
+document.getElementById("login").style.display = "none";
+document.getElementById("dataTable").style.display = "table";
 
 loadData();
 
@@ -79,24 +100,41 @@ alert("Wrong Password");
 function loadData(){
 
 fetch("https://yogaproject-uzah.onrender.com/admin-data")
-.then(res=>res.json())
-.then(data=>{
 
-let rows="";
+.then(response => {
 
-data.forEach(item=>{
+if(!response.ok){
+throw new Error("Server error");
+}
 
-rows+=`
+return response.json();
+
+})
+
+.then(data => {
+
+let rows = "";
+
+data.forEach(item => {
+
+rows += `
 <tr>
-<td>${item.name}</td>
-<td>${item.email}</td>
-<td>${item.phone}</td>
+<td>${item.name || ""}</td>
+<td>${item.email || ""}</td>
+<td>${item.phone || ""}</td>
 </tr>
 `;
 
 });
 
-document.getElementById("tableBody").innerHTML=rows;
+document.getElementById("tableBody").innerHTML = rows;
+
+})
+
+.catch(error => {
+
+alert("Error fetching data");
+console.log(error);
 
 });
 
@@ -105,5 +143,5 @@ document.getElementById("tableBody").innerHTML=rows;
 </script>
 
 </body>
-
 </html>
+
