@@ -49,7 +49,7 @@ app.post("/register", async (req, res) => {
 
 app.get("/admin-data", async (req, res) => {
   try {
-    const data = await Enrollment.find();
+    const data = await user.find();
     res.json(data);
   } catch (err) {
     res.status(500).send("Error fetching data");
@@ -62,6 +62,7 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
 });
+
 
 
 
