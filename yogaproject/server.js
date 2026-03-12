@@ -47,6 +47,14 @@ app.post("/register", async (req, res) => {
     }
 });
 
+app.get("/admin-data", async (req, res) => {
+  try {
+    const data = await Enrollment.find();
+    res.json(data);
+  } catch (err) {
+    res.status(500).send("Error fetching data");
+  }
+});
 /* -------- Start Server -------- */
 // Use the port provided by Render or default 5000 locally
 const PORT = process.env.PORT || 5000;
@@ -54,6 +62,7 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
 });
+
 
 
 
