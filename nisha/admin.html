@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#111;
+color:white;
+text-align:center;
+}
+
+table{
+margin:auto;
+border-collapse:collapse;
+width:80%;
+}
+
+th,td{
+border:1px solid white;
+padding:10px;
+}
+
+th{
+background:#9b6cff;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Admin Panel</h1>
+
+<div id="login">
+
+<input type="password" id="pass" placeholder="Enter Admin Password">
+<button onclick="checkPass()">Login</button>
+
+</div>
+
+<table id="dataTable" style="display:none">
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+</tr>
+</thead>
+
+<tbody id="tableBody"></tbody>
+
+</table>
+
+<script>
+
+function checkPass(){
+
+let pass=document.getElementById("pass").value;
+
+if(pass==="ekishu777"){
+
+document.getElementById("login").style.display="none";
+document.getElementById("dataTable").style.display="table";
+
+loadData();
+
+}
+else{
+alert("Wrong Password");
+}
+
+}
+
+function loadData(){
+
+fetch("/admin-data")
+.then(res=>res.json())
+.then(data=>{
+
+let rows="";
+
+data.forEach(item=>{
+
+rows+=`
+<tr>
+<td>${item.name}</td>
+<td>${item.email}</td>
+<td>${item.phone}</td>
+</tr>
+`;
+
+});
+
+document.getElementById("tableBody").innerHTML=rows;
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
