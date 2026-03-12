@@ -78,7 +78,7 @@ alert("Wrong Password");
 
 function loadData(){
 
-fetch("/admin-data")
+fetch("https://yogaproject-uzah.onrender.com/admin-data")
 .then(res=>res.json())
 .then(data=>{
 
@@ -105,4 +105,5 @@ document.getElementById("tableBody").innerHTML=rows;
 </script>
 
 </body>
+
 </html>
