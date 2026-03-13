@@ -52,12 +52,19 @@ background:#9b6cff;
 }
 
 /* HEADER */
+
 .about-header{
 text-align:center;
 padding:150px 20px;
 height:80vh;
 
-background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+/* halka dark overlay */
+background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
 url("medalpic1.jpg");
 
 background-size:cover;
@@ -66,8 +73,15 @@ background-repeat:no-repeat;
 }
 
 .about-header h1{
-font-size:45px;
+font-size:60px;
 color:#9b6cff;
+letter-spacing:2px;
+margin-bottom:10px;
+}
+
+.about-header p{
+font-size:22px;
+color:white;
 }
 
 /* FOUNDER */
@@ -261,6 +275,7 @@ peace and positivity.
 
 </body>
 </html>
+
 
 
 
