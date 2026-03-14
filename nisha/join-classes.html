@@ -12,13 +12,11 @@ body {
   background: linear-gradient(135deg, #111, #222);
   color: #fff;
   margin: 0;
-  background-image: url('yogaclassespic2.jpg'); /* image path */
-  background-size: cover;           /* पूरे page को cover करे */
-  background-position: center;      /* image center में रहे */
-  background-repeat: no-repeat;     /* image repeat न हो */
-  background-attachment: fixed;     /* scroll करते समय image fixed रहे */
-  
-
+  background-image: url('yogaclassespic2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* NAVBAR */
@@ -43,10 +41,6 @@ body {
   gap:25px;
   margin:0;
   padding:0;
-}
-
-.nav-links li{
-  display:inline;
 }
 
 .nav-links a{
@@ -78,17 +72,22 @@ header.classes-hero {
 }
 
 header.classes-hero h1 {
-  font-size: 50px;
+  font-size: 55px;
   letter-spacing: 3px;
   background: linear-gradient(90deg, #8e44ad, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  /* DARK EFFECT */
+  text-shadow:0 5px 20px rgba(0,0,0,0.9);
+
   margin-bottom: 15px;
 }
 
 header.classes-hero p {
   font-size: 22px;
   max-width: 800px;
+  text-shadow:0 3px 10px rgba(0,0,0,0.9);
 }
 
 /* CONTENT */
@@ -108,9 +107,11 @@ header.classes-hero p {
   margin-bottom: 25px;
 }
 
+/* PROGRAM CARDS */
+
 .class-card {
   background: #222;
-  padding: 20px;
+  padding: 25px;
   margin: 20px 0;
   border-radius: 15px;
   transition: 0.3s ease;
@@ -121,7 +122,75 @@ header.classes-hero p {
   background: #8e44ad;
 }
 
-/* FORM DESIGN */
+.class-card h3{
+margin-bottom:10px;
+}
+
+.class-card p{
+margin:5px 0;
+}
+
+/* JOIN BUTTON */
+
+.join-btn{
+display:inline-block;
+margin-top:10px;
+padding:8px 20px;
+background:#8e44ad;
+color:white;
+text-decoration:none;
+border-radius:20px;
+font-size:14px;
+}
+
+/* ONLINE OFFLINE SECTION */
+
+.mode-section{
+max-width:900px;
+margin:40px auto;
+padding:30px;
+background:#111;
+border-radius:20px;
+box-shadow:0 10px 35px rgba(0,0,0,0.6);
+text-align:center;
+}
+
+.mode-section h2{
+color:#8e44ad;
+margin-bottom:30px;
+}
+
+.mode-box{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.mode-card{
+background:#222;
+padding:25px;
+width:250px;
+border-radius:15px;
+transition:0.3s;
+}
+
+.mode-card:hover{
+background:#8e44ad;
+transform:translateY(-5px);
+}
+
+.mode-btn{
+display:inline-block;
+margin-top:10px;
+padding:8px 18px;
+background:#8e44ad;
+border-radius:20px;
+text-decoration:none;
+color:white;
+}
+
+/* FORM */
 
 .register-form {
   margin-top: 40px;
@@ -183,27 +252,63 @@ header.classes-hero p {
 
 <div class="class-card">
 <h3>Beginner Yoga</h3>
-<p>Perfect for newcomers starting their wellness journey.</p>
+<p>Duration: 45 Minutes</p>
+<p>Schedule: Mon - Fri</p>
+<p>Fee: ₹499 / month</p>
+<a href="enroll.html" class="join-btn">Join Now</a>
 </div>
 
 <div class="class-card">
 <h3>Advanced Yoga</h3>
-<p>Improve balance, flexibility and master advanced asanas.</p>
+<p>Duration: 60 Minutes</p>
+<p>Schedule: Mon - Sat</p>
+<p>Fee: ₹799 / month</p>
+<a href="enroll.html" class="join-btn">Join Now</a>
 </div>
 
 <div class="class-card">
 <h3>Meditation & Mindfulness</h3>
-<p>Develop clarity and calmness with guided meditation.</p>
+<p>Duration: 30 Minutes</p>
+<p>Stress Relief & Mental Clarity</p>
+<p>Fee: ₹399 / month</p>
+<a href="enroll.html" class="join-btn">Join Now</a>
 </div>
 
 <div class="class-card">
 <h3>Personal Training</h3>
-<p>Customized one-on-one yoga sessions tailored to you.</p>
+<p>One-on-One Yoga Training</p>
+<p>Flexible Timing</p>
+<p>Fee: ₹1499 / month</p>
+<a href="enroll.html" class="join-btn">Join Now</a>
 </div>
 
 </section>
 
-<!-- WHATSAPP SCRIPT -->
+<!-- ONLINE OFFLINE OPTION -->
+
+<section class="mode-section">
+
+<h2>Choose Your Class Mode</h2>
+
+<div class="mode-box">
+
+<div class="mode-card">
+<h3>Online Classes</h3>
+<p>Attend live yoga sessions from home.</p>
+<p>Platform: Zoom / Google Meet</p>
+<a href="enroll.html" class="mode-btn">Join Online</a>
+</div>
+
+<div class="mode-card">
+<h3>Offline Classes</h3>
+<p>Practice yoga in our studio with a trainer.</p>
+<p>Personal Guidance Available</p>
+<a href="enroll.html" class="mode-btn">Join Offline</a>
+</div>
+
+</div>
+
+</section>
 
 <script>
 
