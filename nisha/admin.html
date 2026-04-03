@@ -2,27 +2,22 @@
 <html>
 <head>
 <title>Admin Panel</title>
-
 <style>
-
 body{
 font-family:Arial;
 background:#111;
 color:white;
 text-align:center;
 }
-
 h1{
 margin-top:30px;
 }
-
 input{
 padding:10px;
 border-radius:6px;
 border:none;
 margin-right:10px;
 }
-
 button{
 padding:10px 15px;
 background:#9b6cff;
@@ -47,24 +42,15 @@ padding:10px;
 th{
 background:#9b6cff;
 }
-
 </style>
-
 </head>
-
 <body>
-
 <h1>Admin Panel</h1>
-
 <div id="login">
-
 <input type="password" id="pass" placeholder="Enter Admin Password">
 <button onclick="checkPass()">Login</button>
-
 </div>
-
 <table id="dataTable" style="display:none">
-
 <thead>
 <tr>
 <th>Name</th>
@@ -72,51 +58,33 @@ background:#9b6cff;
 <th>Phone</th>
 </tr>
 </thead>
-
 <tbody id="tableBody"></tbody>
-
 </table>
-
 <script>
-
 function checkPass(){
-
 let pass = document.getElementById("pass").value;
-
 if(pass === "ekishu777"){
-
 document.getElementById("login").style.display = "none";
 document.getElementById("dataTable").style.display = "table";
-
 loadData();
-
 }
 else{
 alert("Wrong Password");
 }
-
 }
 
 function loadData(){
-
 fetch("https://yogaproject-uzah.onrender.com/admin-data")
-
 .then(response => {
-
 if(!response.ok){
 throw new Error("Server error");
 }
-
 return response.json();
-
 })
 
 .then(data => {
-
 let rows = "";
-
 data.forEach(item => {
-
 rows += `
 <tr>
 <td>${item.name || ""}</td>
@@ -124,22 +92,15 @@ rows += `
 <td>${item.phone || ""}</td>
 </tr>
 `;
-
 });
 
 document.getElementById("tableBody").innerHTML = rows;
-
 })
-
 .catch(error => {
-
 alert("Error fetching data");
 console.log(error);
-
 });
-
 }
-
 </script>
 
 </body>
