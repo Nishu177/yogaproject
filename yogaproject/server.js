@@ -24,20 +24,18 @@ app.post("/register", async (req, res) => {
     res.send("Enrollment Successful 🎉");
   } catch (error) {
     console.log(error);
-    res.status(500).send("Server Error"); }
-});
+    res.status(500).send("Server Error"); } });
 app.get("/admin-data", async (req, res) => { 
   try {
     const users = await User.find();
     res.json(users);
   } catch (error) {
     console.log(error);
-    res.status(500).send("Error fetching data");  }
-});
+    res.status(500).send("Error fetching data");  }});
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log("Server running on port " + PORT);
-});
+  console.log("Server running on port " + PORT); });
+
 
 
 
