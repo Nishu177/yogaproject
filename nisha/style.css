@@ -238,6 +238,37 @@ ul li:hover {
 .split-section .text {
   flex: 1;
   text-align: left;}
+
+.split-section {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.media {
+  flex: 1;
+}
+
+.text {
+  flex: 1;
+}
+
+.coach-video {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.coach-photos {
+  display: flex;
+  gap: 10px;
+}
+
+.coach-photos img {
+  width: 32%;
+  border-radius: 10px;
+}
 @media (max-width: 768px) {
   .split-section {
     flex-direction: column;
