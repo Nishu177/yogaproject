@@ -269,6 +269,50 @@ ul li:hover {
   width: 32%;
   border-radius: 10px;
 }
+#coach {
+  padding: 50px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.coach-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.coach-image img {
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.coach-details {
+  flex: 1;
+  text-align: left;
+}
+
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
 @media (max-width: 768px) {
   .split-section {
     flex-direction: column;
