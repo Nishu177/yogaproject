@@ -313,6 +313,13 @@ ul li:hover {
 .card:hover {
   transform: scale(1.05);
 }
+.coach-image img {
+  width: 250px;       /* size control */
+  height: 300px;      /* fixed height */
+  object-fit: cover;  /* image stretch na ho */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
 @media (max-width: 768px) {
   .split-section {
     flex-direction: column;
