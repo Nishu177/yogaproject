@@ -231,9 +231,9 @@ ul li:hover {
   justify-content: center;}
 .split-section .media img,
 .split-section .media video {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 20px;
+  width: 180%;
+  max-width: 180px;
+  border-radius: 50px;
   border: 4px solid var(--accent-color);}
 .split-section .text {
   flex: 1;
