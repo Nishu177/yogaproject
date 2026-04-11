@@ -240,25 +240,22 @@ ul li:hover {
   text-align: left;}
 
 
-/* ================= ABOUT SECTION UPGRADE ================= */
-
-/* ABOUT SECTION NEW LAYOUT */
+/* ================= ABOUT SECTION FINAL FIX ================= */
 
 .about-container {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-/* EACH ROW */
-.about-row {
-  display: flex;
   align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: nowrap;
 }
 
-/* PROFILE IMAGE */
+.about-images {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .profile-img {
   width: 160px;
   height: 160px;
@@ -267,42 +264,22 @@ ul li:hover {
   border: 3px solid var(--accent-color);
 }
 
-/* MEDAL IMAGE (SMALLER) */
 .medal-img {
-  width: 130px;   /* 👈 chhoti kar di */
+  width: 130px;
   height: 130px;
   object-fit: cover;
   border-radius: 15px;
   border: 2px solid var(--accent-color);
 }
 
-/* TEXT SIDE */
-.about-text {
+.about-content {
   flex: 1;
   max-width: 500px;
 }
 
-.about-text p {
-  margin: 8px 0;
+.about-content p {
   color: #ccc;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .about-row {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-.medal-img {
-  width: 180px;
-  border-radius: 20px;
-  border: 2px solid var(--accent-color);
-}
-
-.about-content {
-  max-width: 500px;
+  margin-bottom: 10px;
 }
 
 .achievements-box {
@@ -329,7 +306,18 @@ ul li:hover {
   color: #ccc;
 }
 
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
 
+  .about-images {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
 /* ================= FOOTER DESIGN ================= */
 
 footer {
